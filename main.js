@@ -42,7 +42,15 @@ setInterval(() => {
 		// s - это ширина и высота нашего "квадрата"
 	});
 
-
+	//змейка поумнела
+	if (sBody[sBody.length-1].x == a[0]) {
+		console.log('yes')
+		d = 4
+	}
+	 	if (sBody[sBody.length-1].y == a[1]) {
+		console.log('yes')
+		d = 3
+	}
 
     
 }, 1000 / 15);
