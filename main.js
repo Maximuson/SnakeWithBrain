@@ -12,11 +12,16 @@ var gP = document.getElementById('gP'), // Достаем canvas
   s = 25; newB(); newA(); // Создаем змейку
 gP.width = innerWidth; // Сохранем четкость изображения, выставив полную ширину экрана
 gP.height = innerHeight; // То же самое, но только с высотой
+let color = 000
 setInterval(() => {
 	if (a[0] + s >= gP.width || a[1] + s >= gP.height) 
 		newA();
 	g.clearRect(0,0,gP.width,gP.height); //Очищаем старое
-	g.fillStyle = "red";
+	color += 1;
+	if (color == 600){
+		color = 100;
+	}
+	g.fillStyle = `#${color}`;
 	g.fillRect(...a, s, s);
 	
 	g.fillStyle = "#000";
