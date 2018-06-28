@@ -50,24 +50,26 @@ setInterval(() => {
 	//змейка поумнела
 	
 	if (sBody[sBody.length-1].x == a[0]  ) {
-		if (sBody[sBody.length-1].y < a[1] ){
+		if (sBody[sBody.length-1].y > a[1] ){
 			console.log('i go up')
+			console.log(sBody[sBody.length-1].y, a[1])
 			d = 4
 		}
-		else {
-		
+		if (sBody[sBody.length-1].y <= a[1] && d != 4 ) {
 				console.log('i go down')
 				d = 2
-			}
 		}
-	
-
-		
+	}
 	
 	 	if (sBody[sBody.length-1].y == a[1]  ) {
-		console.log('yes')
-		d = 3
-	}
+			if (sBody[sBody.length-1].x < a[0] ) {
+				d = 1
+			}
+			if (sBody[sBody.length-1].x >= a[0] && d != 1 ) {
+				d = 3
+			}
+
+		}
 
     
 }, 1000 / 15);
